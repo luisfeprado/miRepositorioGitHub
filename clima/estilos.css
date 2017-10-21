@@ -1,0 +1,67 @@
+header {
+	background:#3E3B80;
+	color:#FFFFFF;
+}
+
+.main {
+	background:#FFFFFF;
+}
+
+.color1 {
+	background: #34495e;
+	color:#fff;
+}
+
+aside {
+	background:#DBD9FF;
+	color:#040404;
+}
+
+footer {
+	background:#DBD9FF;
+	color:#000000;
+}
+
+
+
+
+
+.ms_div_encabezado  { 
+  color: #00FF00; 
+  font-family:arial; 
+  font-size: 20pt; 
+  background:#E285D4;
+}
+.ms_div_menu  { 
+  color: #000000; 
+  font-family:arial; 
+  font-size: 10pt; 
+  background:#C7C6C5;
+}
+.ms_left{
+    float: left;    
+}
+.ms_right{
+    float: right;
+    bottom: 0px;    
+}
+.ms_img_div_maqueta_carrusel {
+    background-image: url('imagenes\slide-image-2.jpg');
+}
+.ms_div_des_prod{
+
+  font-size:15px;
+  border-bottom-style: outset; 
+  border-bottom-width: 1px;  
+  border-bottom-color: #F5F3F3;  
+}
+.ms_div_total_checkout  { 
+  background:#CAC9CA;
+}
+.ms_div_usuarios_registrados  { 
+  color: #FFFFFF; 
+  font-family:arial; 
+  font-weight: bold;
+  font-size: 15pt; 
+  background:#7E70D2;
+}

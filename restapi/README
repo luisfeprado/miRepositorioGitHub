@@ -1,0 +1,152 @@
+README
+------
+AUTOR: LUIS PRADO (luisfeprado@gmail.com)
+NOME: REST API para gerenciar dados em tabelas pessoas e contatos
+FRAMEWORK: SLIM. Este é um micro framework PHP que ajuda a escrever rapidamente aplicativos e APIs simples e poderosos da Web.
+
+
+INSTALL:
+
+Copie a folder "restapi" na folder de trabalho de Apache. Por exemplo HTDOCS no XAMPP o /var/www en Linux.
+
+ela contém três subpastas: Include, libs e v1.
+
+Include: contém os arquivos de conexão para o BD e a classe com todas as consultas ao banco de dados.
+
+libs: contém o framework Slim
+
+v1: contém el arquivo index.php com todos os endpoints da REST API, além do arquivo .htaccess
+
+
+
+FERRAMENTA UTILIZADA PARA O TESTE DURANTE A PROGRAMAÇÃO:
+Postman RESTClient
+
+
+MANEJADOR BD: mySQL
+BD nome:bdcontactos
+DB_USERNAME=root
+DB_PASSWORD=''
+
+
+CREATE TABLE `person` (
+`id` int(11) NOT NULL,  
+`name` varchar(255) NOT NULL, 
+`surname` varchar(255) NOT NULL,  
+`email` varchar(255) NOT NULL,  
+`address` varchar(2000) NOT NULL,  
+`phone` varchar(255) NOT NULL,
+`website` varchar(255) NOT NULL) 
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `contact` (  
+`id` bigint(20) UNSIGNED NOT NULL COMMENT 'autoincremental',  
+`id_person` int(11) NOT NULL,  
+`type` varchar(255) NOT NULL,  
+`value` varchar(2000) NOT NULL) 
+ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+TESTE:
+
+#########################################
+1) MÉTODO GET PARA OBTER LISTA DE PESSOAS 
+#########################################
+TESTE:     http://localhost/restapi/v1/person/all
+METODO: GET
+RESULTADO: Mostra todas as pessoas na tabela.
+
+TESTE:  http://localhost/restapi/v1/person/8894632
+RESULTADO: Mostra  o registro do id indicado.
+
+#############################################
+2) MÉTODO POST PARA CRIAR O REGISTO DE PESSOA
+#############################################
+ TESTE:     http://localhost/restapi/v1/person
+ METODO: POST
+ OBSERVAÇÃO:
+   O POST DEVE TER AS KEYS: 
+        -id
+        -nombre
+        -apellido
+        -email
+        -direccion
+        -telefono
+        -website
+
+ RESULTADO: Cria um registro na tabela de pessoas
+
+
+#########################################
+3) MÉTODO DELETE PARA ELIMINAR UMA PESSOA
+#########################################
+ TESTE:  http://localhost/restapi/v1/person/8894632
+ METODO: DELETE
+ RESULTADO: Elimina  o registro do id indicado.
+
+ #########################################
+ 4) METODO PUT PARA ACTUALIZAR UMA PESSOA 
+ #########################################
+ TESTE:     http://localhost/restapi/v1/person/889516
+ METODO: PUT
+ OBSERVAÇÃO:
+   O POST DEVE TER AS KEYS  (X-WWW-FORM-URLENCODED): 
+        -nombre
+        -apellido
+        -email
+        -direccion
+        -telefono
+        -website
+
+ o número no uri significa o id da pessoa
+ RESULTADO: Actualiza completamente um registro na tabela de pessoas
+
+
+##########################################
+1) METODO GET PARA OBTER LISTA DE CONTATOS
+##########################################
+TESTE:     http://localhost/restapi/v1/contact/all
+METODO: GET
+RESULTADO: Mostra todas os contatos na tabela.
+
+TESTE:  http://localhost/restapi/v1/contact/1
+RESULTADO: Mostra  o registro do id indicado.
+NOTA: Na tabela de contato, o ID é um serial
+
+#########################################
+2) METODO POST PARA CRIAR UM CONTATO     
+#########################################
+TESTE:     http://localhost/restapi/v1/contact
+METODO: POST
+OBSERVAÇÃO:
+   O POST DEVE TER AS KEYS: 
+        -id_persona
+        -tipo
+        -valor
+  
+ RESULTADO: Cria um registro na tabela de contatos
+
+
+#########################################
+3) METODO DELETE PARA REMOVER UM CONTATO 
+#########################################
+TESTE:  http://localhost/restapi/v1/contac/3
+METODO: DELETE
+RESULTADO: Elimina  o registro do id indicado.
+
+#########################################
+4) METODO PUT PARA ACTUALIZAR UM CONTATO 
+#########################################
+TESTE:     http://localhost/restapi/v1/contact/2
+METODO: PUT
+OBSERVAÇÃO:
+   O POST DEVE TER AS KEYS  (X-WWW-FORM-URLENCODED): 
+        -id_persona
+        -tipo
+        -valor
+
+ o número no uri significa o id da contato
+ RESULTADO: Actualiza completamente um registro na tabela de contato
