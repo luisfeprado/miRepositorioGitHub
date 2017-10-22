@@ -1,0 +1,12 @@
+README
+------
+
+INSTALL: Copie a pasta "balanced" para o diretório de trabalho do Apache:
+
+HTDOCS no XAMPP Windows
+
+var/www no Linux
+
+Execute colocando por exemplo:
+
+http://localhost/balanced/index.php
