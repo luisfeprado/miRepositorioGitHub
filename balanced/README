@@ -1,5 +1,7 @@
 README
 ------
+OBJETIVO:
+Esta aplicação leva uma Cadeia de "brackets" como entrada e determina se a ordem dos "brackets" é válida.
 
 INSTALL: Copie a pasta "balanced" para o diretório de trabalho do Apache:
 
