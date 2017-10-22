@@ -1,0 +1,16 @@
+README
+------
+OBJETIVO:
+Este é um aplicativo responsivo baseado em Bootstrap e no serviço gratuito: https://openweathermap.org/api de informações meteorológicas através da API REST.Retorna as condições meteorológicas atuais de uma cidade.
+
+INSTALL: Copie a pasta "clima" para o diretório de trabalho do Apache:
+
+HTDOCS no XAMPP Windows
+
+var/www no Linux
+
+Execute colocando por exemplo:
+
+http://localhost/clima/
+o
+http://localhost/clima/index.php
